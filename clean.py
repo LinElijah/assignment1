@@ -16,5 +16,8 @@ merged_df = merged_df.dropna()
 # Drop rows with 'job' value containing 'insurance' or 'Insurance'
 merged_df = merged_df[~merged_df['job'].str.contains('insurance|Insurance')]
 
+# Print the shape of the output file
+print("Output file shape:", merged_df.shape)
+
 # Save the modified data to a new CSV file
 merged_df.to_csv('clean_data.csv', index=False)
